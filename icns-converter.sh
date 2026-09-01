@@ -47,8 +47,12 @@ for INPUT_PNG in "${PNG_FILES[@]}"; do
     magick "${INPUT_PNG}" -resize 32x32! "${ICONSET_DIR}/icon_32x32.png"
     magick "${INPUT_PNG}" -resize 64x64! "${ICONSET_DIR}/icon_32x32@2x.png"
     magick "${INPUT_PNG}" -resize 128x128! "${ICONSET_DIR}/icon_128x128.png"
-    magick "${INPUT_PNG}" -resize 256x256! "${ICONSET_DIR}/icon_128x128@2x.png" 
-    magick "${INPUT_PNG}" -resize 512x512! "${ICONSET_DIR}/icon_256x256.png"
+    magick "${INPUT_PNG}" -resize 256x256! "${ICONSET_DIR}/icon_128x128@2x.png"
+    magick "${INPUT_PNG}" -resize 256x256! "${ICONSET_DIR}/icon_256x256.png"
+    magick "${INPUT_PNG}" -resize 512x512! "${ICONSET_DIR}/icon_256x256@2x.png"
+    magick "${INPUT_PNG}" -resize 512x512! "${ICONSET_DIR}/icon_512x512.png"
+    magick "${INPUT_PNG}" -resize 1024x1024! "${ICONSET_DIR}/icon_512x512@2x.png"
+
 
     # Create the .icns file in the output directory
     iconutil -c icns "${ICONSET_DIR}" -o "${OUTPUT_DIR}/${BASENAME}.icns"
